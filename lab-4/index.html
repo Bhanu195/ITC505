@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Engineering: An Introduction</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Web Engineering: An Introduction</h1>
+    </header>
+
+    <nav>
+        <a href="#abstract">Abstract</a>
+        
+        <a href="#web-crisis">Web Crisis</a>
+        <a href="#addendum">Addendum</a>
+    </nav>
+
+    <section id="abstract">
+        <article>
+            <h2>Abstract</h2>
+            <p>Within a short period, the Internet and World Wide Web have become ubiquitous, surpassing all other technological developments in our history. They've also grown rapidly in their scope and extent of use, significantly affecting all aspects of our lives. Industries such as manufacturing, travel and hospitality, banking, education, and government are Web-enabled to improve and enhance their operations. E-commerce has expanded quickly, cutting across national boundaries. Even traditional legacy information and database systems have migrated to the Web. Advances in wireless technologies and Web-enabled appliances are triggering a new wave of mobile Web applications. As a result, we increasingly depend on a range of Web applications. Now that many of us rely on Web based systems and applications, they need to be reliable and perform well. To build these systems and applications, Web developers need a sound methodology, a disciplined and repeatable process, better development tools, and a set of good guidelines. The emerging field of Web engineering fulfils these needs. It uses scientific, engineering, and management principles and systematic approaches to successfully develop, deploy, and maintain high-quality Web systems and applications. It aims to bring the current chaos in Web based system development under control, minimize risks, and enhance Web site maintainability and quality.</p>
+        </article>
+    </section>
+
+    <section id="web-crisis">
+        <article>
+            <h2>Web Crisis</h2>
+            <p>Although numerous Web-based systems are in use now, the manner in which they're developed, deployed, and managed raises serious concerns. Web developers often use ad hoc, hacker-type approaches, which lack rigor, systematic techniques, sound methodologies, and quality assurance.</p>
+            <p>The current problems surrounding Web-based system development partially result from the continuing advances in Internet and Web technologies, the increase in commercial Web applications, the frantic rush to be on the Web, and the need to quickly migrate legacy systems to Web environments.</p>
+            <p>Poorly developed Web-based applications that continue to expand have a high probability of low performance and/or failure. Recently, large Web-based systems have had an increasing number of failures. In certain classes of applications such as supply-chain management, tendering and procurement, financial services, and emerging digital hubs or marketplaces, a system failure can propagate broad-based problems across many functions, causing a major Web disaster.</p>
+            <ul>
+                <li>Delivered systems didn't meet business needs 84 percent of the time.</li>
+                <li>Schedule delays plagued the projects 79 percent of the time.</li>
+                <li>Projects exceeded the budget 63 percent of the time.</li>
+                <li>Delivered systems didn't have the required functionality 53 percent of the time.</li>
+                <li>Deliverables were of poor quality 52 percent of the time.</li>
+            </ul>
+        </article>
+    </section>
+
+    <section id="addendum">
+        <article>
+            <h2>Addendum</h2>
+            <p>This section explains the stylistic choices made in the CSS to improve the overall presentation of the web page.</p>
+            <h3>Font Choices</h3>
+            <p>For the body text, I chose 'Arial' because it is a widely available sans-serif font that is clean and easy to read for text-heavy content. For the headings, I opted for 'Georgia,' a serif font that contrasts well with the body font, giving the headings a more formal and distinctive appearance.</p>
+
+            <h3>Text Sizes</h3>
+            <p>The main text is set to 16px, which is a comfortable size for reading on desktop and laptop screens. Headings are progressively larger with H1 set to 36px and H2 to 28px to create a visual hierarchy that distinguishes the sections clearly.</p>
+
+            <h3>Color Choices</h3>
+            <p>I used a light grey background color (#f5f5f5) with black text (#333333) for optimal readability. The hyperlinks are styled in a shade of blue (#1a73e8), as this is a familiar color for clickable links. Headings have a dark blue color (#004466) to make them stand out without overwhelming the text.</p>
+
+            <h3>Margin and Padding</h3>
+            <p>I applied global padding of 20px to the body to prevent the content from touching the edges of the screen, giving the page a more open feel. For paragraphs, I added margin-bottom of 15px to create space between text blocks. Headings have slightly more margin to separate them from the body text.</p>
+
+            <h3>HTML Abuse</h3>
+            <p>Initially, I had used H2 tags for certain section headings, such as "Addendum" and "Web Crisis," for stylistic reasons. However, these are clearly subsections, so they were changed to proper H2 tags where necessary. Additionally, all content hierarchy was restored to proper semantic use of tags.</p>
+        </article>
+    </section>
+
+    <aside>
+        <h3>Additional Information</h3>
+        <p>Published in: IEEE MultiMedia (Volume: 8, Issue: 1, Jan.-March 2001)</p>
+        <p>Page(s): 14 - 18</p>
+        <p>Date of Publication: 07 August 2002</p>
+        <p>DOI: <a href="https://doi.org/10.1109/93.923949" target="_blank">10.1109/93.923949</a></p>
+        <p>Publisher: IEEE</p>
+    </aside>
+
+    <footer>
+        <p>Last updated:
+            <span id="lastModified"></span>
+        </p>
+    </footer>
+
+    <script type="text/javascript">
+        var x = document.lastModified;
+        document.getElementById('lastModified').textContent = x;
+    </script>
+
+</body>
+
+</html>
