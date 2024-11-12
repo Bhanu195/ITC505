@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holy Grail Layout</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Page Title</h1>
+    </header>
+    
+    <div class="container">
+        <nav class="sidebar">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        
+        <main class="content">
+            <h2>Main Content Area</h2>
+            <p>This area can contain anything, including JavaScript functionality!</p>
+            <div id="js-interactive"></div>
+        </main>
+        
+        <aside class="ad">
+            <a href="https://www.amazon.com/" target="_blank">
+                <img src="ad-image.jpg" alt="Advertisement" width="100%">
+            </a>
+        </aside>
+    </div>
+    
+    <footer>
+        <p>Last updated: <span id="lastModified"></span></p>
+        <p>Addendum: This project involved creating a simple interactive JavaScript feature. I used event listeners to add functionality to a button, allowing users to interact with the page. One challenge was getting the JavaScript to update the DOM correctly after page load, which I solved by using the `DOMContentLoaded` event.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        var x = document.lastModified;
+        document.getElementById('lastModified').textContent = x;
+    </script>
+</body>
+</html>
