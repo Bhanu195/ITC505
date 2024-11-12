@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alien Planet Adventure</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="story"></div>
+    <div id="choices"></div>
+    <div id="image-container"></div>
+    <footer>
+        <p>Addendum: This story allows the player to explore a mysterious alien world. Each choice leads to new adventures, and the images enhance the story's visual impact. The challenge was aligning the images correctly with each story point and ensuring the functions maintained the flow of the story.</p>
+        <p>Last updated: <span id="lastModified"></span></p>
+    </footer>
+
+    <script>
+        var x = document.lastModified;
+        document.getElementById('lastModified').textContent = x;
+    </script>
+    <script src="index.js"></script>
+</body>
+</html>
