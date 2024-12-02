@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        /* Base Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(45deg, #ff6f61, #ff3c6e);
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Centers form vertically */
+            height: 100vh;
+            flex-direction: column; /* Stack elements vertically */
+            padding: 0 20px;
+        }
+
+        h2 {
+            font-size: 36px;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 30px;
+            font-weight: 700;
+            position: relative;
+            top: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        form {
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        form:hover {
+            transform: translateY(-10px);
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 14px;
+            margin: 8px 0 18px 0;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            color: #333;
+            background-color: #f7f7f7;
+            transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            border-color: #ff3c6e;
+            background-color: #fff;
+            outline: none;
+        }
+
+        input[type="submit"] {
+            background-color: #ff3c6e;
+            color: #fff;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            transition: background-color 0.3s ease-in-out, transform 0.2s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ff6f61;
+            transform: scale(1.05);
+        }
+
+        .error,
+        .success {
+            text-align: center;
+            font-size: 14px;
+            margin-bottom: 16px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .error {
+            background-color: #ff4f58;
+            color: #fff;
+        }
+
+        .success {
+            background-color: #4caf50;
+            color: #fff;
+        }
+
+        .error::before {
+            content: "⚠️ ";
+        }
+
+        .success::before {
+            content: "✔️ ";
+        }
+
+        /* Animation for form fields */
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            body {
+                padding: 0 10px;
+            }
+
+            h2 {
+                font-size: 28px;
+                margin-bottom: 20px;
+            }
+
+            form {
+                max-width: 90%;
+                padding: 30px;
+            }
+
+            input[type="text"],
+            input[type="email"],
+            input[type="password"],
+            input[type="submit"] {
+                font-size: 14px;
+            }
+
+            label {
+                font-size: 12px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            h2 {
+                font-size: 24px;
+            }
+
+            form {
+                padding: 20px;
+            }
+
+            input[type="text"],
+            input[type="email"],
+            input[type="password"],
+            input[type="submit"] {
+                font-size: 13px;
+            }
+
+            label {
+                font-size: 10px;
+            }
+        }
+    </style>
+    <script>
+        // JavaScript form validation function
+        function validateForm() {
+            // Clear previous error messages
+            document.getElementById('errorMessage').innerHTML = '';
+            document.getElementById('successMessage').innerHTML = '';
+
+            // Get form elements
+            var firstName = document.getElementById('firstName').value;
+            var lastName = document.getElementById('lastName').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirmPassword').value;
+            var errorMessage = "";
+
+            // Check for empty fields
+            if (firstName == "" || lastName == "" || email == "" || password == "" || confirmPassword == "") {
+                errorMessage += "All fields must be filled out.<br>";
+            }
+
+            // Check email validity
+            var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!emailPattern.test(email)) {
+                errorMessage += "Please enter a valid email address.<br>";
+            }
+
+            // Check if passwords match
+            if (password !== confirmPassword) {
+                errorMessage += "Passwords do not match.<br>";
+            }
+
+            // Display error messages or success message
+            if (errorMessage != "") {
+                document.getElementById('errorMessage').innerHTML = errorMessage;
+                return false;
+            } else {
+                document.getElementById('successMessage').innerHTML = "Form submitted successfully!";
+                return true;
+            }
+        }
+
+        // Sanitize input to prevent XSS
+        function sanitizeInput(input) {
+            return input.replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Registration Form</h2>
+    <form action="your_server_script.php" method="POST" onsubmit="return validateForm()">
+        <!-- Display error message -->
+        <div id="errorMessage" class="error"></div>
+        
+        <!-- Display success message -->
+        <div id="successMessage" class="success"></div>
+
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName">
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword">
+
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>
