@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lights Out Game</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <h1>Lights Out Game</h1>
+  <div id="game-board"></div>
+  <button id="reset-button">Reset</button>
+  <footer>
+  <h2 style="text-align: center; color: #ffcc00; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);">Project Addendum</h2>
+  <div style="max-width: 800px; margin: 0 auto; text-align: left; padding: 20px; background: rgba(255, 255, 255, 0.1); border-radius: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);">
+    <ul style="list-style: none; padding: 0;">
+      <li style="margin-bottom: 15px;">
+        <strong>Objective:</strong> Create an interactive and visually engaging game that challenges users to turn off all lights on the grid. The project emphasizes responsive design and dynamic functionality.
+      </li>
+      <li style="margin-bottom: 15px;">
+        <strong>Design Choices:</strong>
+        <ul style="list-style: square; margin-left: 20px;">
+          <li>The gradient background evokes a playful and modern aesthetic, enhancing user experience.</li>
+          <li>Hover animations and shadow effects on interactive elements add a polished and professional feel.</li>
+          <li>CSS grid was used for its simplicity and effectiveness in creating the game's layout.</li>
+        </ul>
+      </li>
+      <li style="margin-bottom: 15px;">
+        <strong>Challenges:</strong>
+        <ul style="list-style: square; margin-left: 20px;">
+          <li>Managing adjacent cells' states when toggling lights required implementing an efficient indexing system.</li>
+          <li>Debugging grid interactions to ensure consistent behavior across different browsers.</li>
+        </ul>
+      </li>
+      <li style="margin-bottom: 15px;">
+        <strong>Learnings:</strong>
+        <ul style="list-style: square; margin-left: 20px;">
+          <li>Modular JavaScript is essential for creating scalable and maintainable codebases.</li>
+          <li>Prioritizing user-centered design enhances the accessibility and overall appeal of the application.</li>
+        </ul>
+      </li>
+      <li style="margin-bottom: 15px;">
+        <strong>Future Improvements:</strong>
+        <ul style="list-style: square; margin-left: 20px;">
+          <li>Adding levels with varying grid sizes to increase the game's difficulty.</li>
+          <li>Implementing a scoring system and a timer for additional engagement.</li>
+          <li>Providing visual and audio feedback to celebrate the user's achievements.</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+ <p>Last updated: 
+            <span id="lastModified"></span>
+        </p>
+</footer>
+
+
+  <script src="index.js"></script>
+  <script type="text/javascript">
+    var x = document.lastModified;
+    document.getElementById('lastModified').textContent = x;
+  </script>
+</body>
+</html>
